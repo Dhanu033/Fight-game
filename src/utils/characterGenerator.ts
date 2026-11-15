@@ -3,7 +3,7 @@ import { Character, Archetype } from '../types/game';
 interface GeneratorOptions {
   name?: string;
   archetype?: Archetype;
-  gender?: 'boy' | 'girl' | 'other';
+  gender?: 'boy' | 'girl';
   themePrompt?: string;
   primaryColor?: string;
 }
@@ -149,8 +149,6 @@ export function generateProceduralCharacter(options: GeneratorOptions = {}): Cha
     wins: 0,
     losses: 0,
     aiBehavior: ['aggressive', 'defensive', 'balanced', 'erratic'][Math.floor(Math.random() * 4)] as 'aggressive' | 'defensive' | 'balanced' | 'erratic',
-    isCustom: true,
-    createdAt: new Date().toISOString(),
   };
 }
 
